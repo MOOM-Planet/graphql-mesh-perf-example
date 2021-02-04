@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Sample API
+  description: Sample API
+  version: 0.0.1
+paths:
+  /products:
+    get:
+      operationId: getProducts
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /brands/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      operationId: getBrandById
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+  /manufacturers/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      operationId: getManufacturerById
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manufacturer'
+  /categories/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      operationId: getCategoryById
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+  /images/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      operationId: getImageById
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+components:
+  schemas:
+    Product:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        brandId:
+          type: integer
+        manufacturerId:
+          type: integer
+        categoryId:
+          type: integer
+    Brand:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    Manufacturer:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    Category:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    Image:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: integer
+        url:
+          type: string

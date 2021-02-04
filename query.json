@@ -1,0 +1,1 @@
+{"operationName":"products","variables":{},"query":"query products{getProducts{id,name,brand {name},manufacturer{name},category{name},images{url}}}"}

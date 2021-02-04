@@ -1,0 +1,29 @@
+sources:
+  - name: ProductApi
+    handler:
+      openapi:
+        baseUrl: http://localhost:8080
+        source: ./openapi.yaml
+    transforms:
+      - cache:
+        - field: Query.getBrandById
+          invalidate:
+            ttl: 3600
+        - field: Query.getManufacturerById
+          invalidate:
+            ttl: 3600
+        - field: Query.getCategoryById
+          invalidate:
+            ttl: 3600
+        - field: Query.getImageById
+          invalidate:
+            ttl: 3600
+additionalTypeDefs: |
+  extend type Product {
+    brand: Brand
+    manufacturer: Manufacturer
+    category: Category
+    images: [Image]
+  }
+additionalResolvers:
+  - additional-resolvers.js

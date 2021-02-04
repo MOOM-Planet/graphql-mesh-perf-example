@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.19.2",
+    "@graphql-mesh/openapi": "^0.12.6",
+    "@graphql-mesh/transform-cache": "^0.8.21",
+    "@vue/compiler-sfc": "^3.0.5",
+    "graphql": "^15.5.0"
+  }
+}
