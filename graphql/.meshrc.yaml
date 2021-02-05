@@ -18,12 +18,14 @@ sources:
         - field: Query.getImageById
           invalidate:
             ttl: 3600
+      - prefix:
+          value: My
 additionalTypeDefs: |
-  extend type Product {
-    brand: Brand
-    manufacturer: Manufacturer
-    category: Category
-    images: [Image]
+  extend type MyProduct {
+    brand: MyBrand
+    manufacturer: MyManufacturer
+    category: MyCategory
+    images: [MyImage]
   }
 additionalResolvers:
   - additional-resolvers.js

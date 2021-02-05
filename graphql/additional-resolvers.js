@@ -1,5 +1,5 @@
 const resolvers = {
-    Product: {
+    MyProduct: {
         brand: async (root, args, { ProductApi }) => {
             return await ProductApi.api.getBrandById({id: root.brandId});
         },
