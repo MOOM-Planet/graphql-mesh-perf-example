@@ -10,7 +10,7 @@ The sample REST APIS are:
 * categories
 * images
 
-Each product is referencing a brand, a manufacturer, a category and a list fo images.
+Each product is referencing a brand, a manufacturer, a category and a list of images.
 
 GraphQL Mesh is proving a graph on top os theses APIS using OpenAPI handler + a set of additional types and additional 
 resolvers.
