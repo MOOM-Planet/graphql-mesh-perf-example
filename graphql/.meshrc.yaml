@@ -5,21 +5,22 @@ sources:
         baseUrl: http://localhost:8080
         source: ./openapi.yaml
     transforms:
-      - cache:
-        - field: Query.getBrandById
-          invalidate:
-            ttl: 3600
-        - field: Query.getManufacturerById
-          invalidate:
-            ttl: 3600
-        - field: Query.getCategoryById
-          invalidate:
-            ttl: 3600
-        - field: Query.getImageById
-          invalidate:
-            ttl: 3600
       - prefix:
           value: My
+transforms:
+  - cache:
+    - field: Query.getBrandById
+      invalidate:
+        ttl: 3600
+    - field: Query.getManufacturerById
+      invalidate:
+        ttl: 3600
+    - field: Query.getCategoryById
+      invalidate:
+        ttl: 3600
+    - field: Query.getImageById
+      invalidate:
+        ttl: 3600
 additionalTypeDefs: |
   extend type MyProduct {
     brand: MyBrand
